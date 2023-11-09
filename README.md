@@ -67,3 +67,7 @@ This backend of the extension is built using NextJS. It is used to provide real-
         }
     ]
     ```
+    
+## Contact
+
+Ankur Singh - ankursingh91002@gmail.com
