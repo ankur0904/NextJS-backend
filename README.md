@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS Chat Extension Backend
 
-## Getting Started
+This backend of the extension is built using NextJS. It is used to provide real-time responses to the queries of the users.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **API:** The extension uses the NextJS API to provide real-time responses to the queries of the users. This API endpoint `http://localhost:3000/api/generateResponse` is called by the extension to get the response and this also helps to serve the content of the body in the `json` for mat.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Error Handling:** The backend is also responsible for the handing different types of errors which can occur during the process.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Responsible for interacting with AI model:** The backend are also responsible for interacting with the AI model `OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5` to get the response for the query of the user.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Local Installation
 
-## Learn More
+1. **Firstly Clone the repository**
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    git clone https://github.com/ankur0904/NextJS-backend.git
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install the dependencies**
+    ```bash
+    pnpm install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Run the development server**
+    ```bash
+    pnpm dev
+    ```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. **Test the server**
+    
+    You can use Postman to test the server `API endpoints.`
+    - Paste the `http://localhost:3000/api/generateResponse` in the URL bar.
+    - Select the `POST` method.
+    - Click on the `Body` tab, then `raw` and then select `JSON` from the dropdown and paste the following JSON in the body.
+        ```json
+        {
+            "command": "What is 70% of 100?"
+        }
+        ```
+        > Remember the key must be `command`.
+    - Click on the `Send` button.
+    
+5. **Done 🎉**
+    - You will get the response in the body like this:
+    ```json
+    [
+        {
+            "generated_text": "What is 70% of 100?\n\n70% of 100 is 70.\n\nTherefore, 70% of 100 is 70."
+        }
+    ]
+    ```
