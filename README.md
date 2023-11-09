@@ -2,6 +2,16 @@
 
 This backend of the extension is built using NextJS. It is used to provide real-time responses to the queries of the users.
 
+## Requirements for Local Installation
+
+- [NodeJS](https://nodejs.org/en/) 
+    > *Recommended: (v18.18.0)*
+- [pnpm](https://pnpm.io/) 
+    > *Recommended: (v8.10.0)*
+- [Git](https://git-scm.com/downloads)
+- [Postman](https://www.postman.com/downloads/)
+- [OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5](https://huggingface.co/OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5)
+
 ## Features
 
 - **API:** The extension uses the NextJS API to provide real-time responses to the queries of the users. This API endpoint `http://localhost:3000/api/generateResponse` is called by the extension to get the response and this also helps to serve the content of the body in the `json` for mat.
@@ -23,12 +33,20 @@ This backend of the extension is built using NextJS. It is used to provide real-
     pnpm install
     ```
 
-3. **Run the development server**
+3. Set up the environment variable.
+    - Create a `.env.local` file in the root directory of the project.
+    - Get the API Key from [here](https://huggingface.co/)
+    - And paste the value like this:
+    ```
+        HUGGING_FACE_API_KEY=<API_KEY>
+    ```
+
+4. **Run the development server**
     ```bash
     pnpm dev
     ```
 
-4. **Test the server**
+5. **Test the server**
     
     You can use Postman to test the server `API endpoints.`
     - Paste the `http://localhost:3000/api/generateResponse` in the URL bar.
@@ -42,7 +60,7 @@ This backend of the extension is built using NextJS. It is used to provide real-
         > Remember the key must be `command`.
     - Click on the `Send` button.
     
-5. **Done 🎉**
+6. **Done 🎉**
     - You will get the response in the body like this:
     ```json
     [
