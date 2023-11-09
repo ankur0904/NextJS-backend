@@ -4,13 +4,11 @@ This backend of the extension is built using NextJS. It is used to provide real-
 
 ## Requirements for Local Installation
 
-- [NodeJS](https://nodejs.org/en/) 
-    > *Recommended: (v18.18.0)*
-- [pnpm](https://pnpm.io/) 
-    > *Recommended: (v8.10.0)*
-- [Git](https://git-scm.com/downloads)
-- [Postman](https://www.postman.com/downloads/)
-- [OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5](https://huggingface.co/OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5)
+- [NodeJS](https://nodejs.org/en/) *Recommended: (v18.18.0)*
+- [pnpm](https://pnpm.io/) *Recommended: (v8.10.0)*
+- [Git](https://git-scm.com/downloads) *Version Control*
+- [Postman](https://www.postman.com/downloads/) *API Testing*
+- [OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5](https://huggingface.co/OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5) *AI Model*
 
 ## Features
 
